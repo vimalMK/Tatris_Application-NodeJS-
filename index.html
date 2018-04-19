@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html ng-app>
+   <head>
+      <meta charset="UTF-8">
+   </head>
+   <style>
+      body
+      {
+      background-image:url(image.jpg);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      }
+      #input{
+      margin-left:200px;
+      margin-top:100px;
+      color:#fff;
+      }
+      #input h5
+      {
+      color:black;
+      margin-left:30%;
+      float:right;
+      }
+      input[type=text] {
+      width: 100%;
+      margin-left:500px;
+      padding: 12px 20px;
+      font-size:10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      .button {
+      position:relative;
+      left: 40%;
+      background-color: #008CBA;
+      margin-left:400px;
+      border: none;
+      color: white;
+      box-shadow:1px 2px 1px 1px #fff;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      }
+      .button:active
+      {
+      box-shadow:none;
+      }
+      #result
+      {
+      margin-top:-80px;
+      margin-left:150px;
+      width:150px;
+      }
+      #output
+      {
+      white-space: pre-wrap;
+      font-size:10px;
+      }
+   </style>
+   <body>
+      <div ng-controller="myController">
+         <div id="input">
+         <h3>tetris.js Compiler with Browser:</h3>
+            <form>
+               <p>
+                  Enter the Tetris Invocation function with input:
+                  <span>
+                     <h6 style="color:#fff">**change the default input as per requirement or just copy paste the whole invocation method**</h6>
+                  </span>
+               </p>
+               <input type="text" id="invoke" placeholder="Enter Username" value='tetris(["          ","          ","          ","          ","          ","          ",
+                        "          ","          ","          ","          ","          ","          ","          ","          ","          ","          ","          ","X   X   XX","X   X    X","XXXXXXXXXX"], 3,["LL ","L  ","L  "])'name="uname" required>
+               <h5>Example: tetris(["     ", "     ", " XX  ", " XX  "], 2, ["L  ", "LLL"])</h5>
+               <a ng-click="myFunc()" class="button">Run tetris.js</a>
+            </form>
+         </div>
+         <h3>      BOARD AFTER BLOCK DROP(pattern):</h3>
+         <h3 id="result" ng-repeat="person in employees" >
+            <br>
+            <pre>
+            <b>{{person.1}}</b>
+            <b>{{person.2}}</b>
+            <b>{{person.3}}</b>
+            <b>{{person.4}}</b>
+            <b>{{person.5}}</b>
+            <b>{{person.6}}</b>
+            <b>{{person.7}}</b>
+            <b>{{person.8}}</b>
+            <b>{{person.9}}</b>
+            <b>{{person.10}}</b>
+            <b>{{person.11}}</b>
+            <b>{{person.12}}</b>
+            <b>{{person.13}}</b>
+            <b>{{person.14}}</b>
+            <b>{{person.15}}</b>
+            <b>{{person.16}}</b>
+            <b>{{person.17}}</b>
+            <b>{{person.18}}</b>
+            <b>{{person.19}}</b>
+            <b>{{person.20}}</b></pre>
+         </h3>
+         <b>Output string array:</b>
+         [<b><span id="output"></span></b>]	
+      </div>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+      <script src="tetris.js"></script>
+      <script>
+         function myController($scope){
+         	
+         	$scope.myFunc=function()
+         	{
+         		var y=document.getElementById("invoke").value;
+         		var x=eval(y);
+         		var row1=x[0];
+         		var row2=x[1];
+         		var row3=x[2];
+         		var row4=x[3];
+         		var row5=x[4];
+         		var row6=x[5];
+         		var row7=x[6];
+         		var row8=x[7];
+         		var row9=x[8];
+         		var row10=x[9];
+         		var row11=x[10];
+         		var row12=x[11];
+         		var row13=x[12];
+         		var row14=x[13];
+         		var row15=x[14];
+         		var row16=x[15];
+         		var row17=x[16];
+         		var row18=x[17];
+         		var row19=x[18];
+         		var row20=x[19];
+         		document.getElementById("output").innerHTML = x;
+                  
+         		$scope.employees = [
+         		   {1: row1,
+         		    2: row2,
+         		    3: row3,
+         		    4: row4,
+         		    5: row5,
+         		    6: row6,
+         		    7: row7,
+         		    8: row8,
+         		    9: row9,
+         		    10: row10,
+         		    11: row11,
+         		    12: row12,
+         		    13: row13,
+         		    14: row14,
+         		    15: row15,
+         		    16: row16,
+         		    17: row17,
+         		    18: row18,
+         		    19: row19,
+         		    20: row20
+         		
+         		}];
+         	}
+         
+         
+         }
+         
+      </script>
+   </body>
+</html>
